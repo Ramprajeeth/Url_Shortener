@@ -56,7 +56,7 @@ const handleDelete=async()=>{
       </a></Card.Text>
 
         <div className='d-flex justify-content-end gap-3'>
-        <Button className='bg-secondary mr-2 border-0 ' onClick={handleShare}>Share</Button>
+        <Button className='bg-info mr-2 border-0 ' onClick={handleShare}>Share</Button>
         <Button className='bg-danger border-0' onClick={handleDelete}>Delete</Button></div>
         </Card.Body>
     </Card>

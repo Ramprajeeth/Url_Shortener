@@ -103,10 +103,10 @@ const handleDelete=async()=>{
       { shortUrl && (
       <Card className='mt-4 shadow-sm light-roumded bg-light'>
       <Card.Header className='bg-dark text-white py-2'> Your Tiny URL</Card.Header>
-      <Card.Title className='p-3 text-center fs-3'><a className='text-decoration-none text-success' href={shortUrl} target='_blank' rel='noopener noreferrer'>{shortUrl}</a></Card.Title>
+      <Card.Title className='p-3 text-center fs-3'><a className='text-decoration-none text-success fw-light' href={shortUrl} target='_blank' rel='noopener noreferrer'>{shortUrl}</a></Card.Title>
 
       <div className='d-flex justify-content-end gap-3 p-3'>
-      <Button className='bg-secondary mr-2 border-0' onClick={handleShare}>Share</Button>
+      <Button className='bg-info mr-2 border-0' onClick={handleShare}>Share</Button>
       <Button className='bg-danger border-0' onClick={handleDelete}>Delete</Button></div>
       </Card>)}
       <ToastNotify show={showToast} setShow={setShowToast} msg={toastMsg}/>

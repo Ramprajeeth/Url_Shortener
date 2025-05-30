@@ -24,8 +24,8 @@ const Header = ({loggedIn,setLoggedIn}) => {
             {
                 loggedIn &&(
                     <>
-                    <Nav.Link as={Link} to='/' className='mx-2'>Dashboard</Nav.Link>
-                    <Nav.Link as={Link} to='/shorten' className='mx-2'>Shorten URL</Nav.Link>
+                    <Nav.Link as={Link} to='/' className='mx-2 text-warning'>Dashboard</Nav.Link>
+                    <Nav.Link as={Link} to='/shorten' className='mx-2 text-warning'>Shorten URL</Nav.Link>
                     <Button onClick={handleLogout} variant='outline-warning' className='ms-2 w-auto d-inline-block rounded-pill'>Logout</Button>
                     </>
                 )
@@ -33,8 +33,8 @@ const Header = ({loggedIn,setLoggedIn}) => {
             {
                 !loggedIn &&(
                     <>
-                    <Nav.Link as={Link} to='/login' className='mx-2'>Login</Nav.Link>
-                    <Nav.Link as={Link} to='/register' className='mx-2'>Register</Nav.Link>
+                    <Nav.Link as={Link} to='/login' className='mx-2 text-warning'>Login</Nav.Link>
+                    <Nav.Link as={Link} to='/register' className='mx-2 text-warning'>Register</Nav.Link>
                     </>
                 )
             }
