@@ -15,24 +15,14 @@ const handleShorten=async(e)=>{
 const username = localStorage.getItem('username');
   e.preventDefault();
 
-if (!longUrl || longUrl.trim() === '') {
-      setToastMsg('Please enter a valid URL');
-      setShowToast(true);
-      return;
-    }
+const urlPattern = /^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}([\/\w.-]*)*\/?$/;
 
-// let cleanUrl=longUrl.trim();
-// if(!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://')){
-//   cleanUrl='https://'+cleanUrl
-// }
-// try{
-//   new URL(cleanUrl);
-// }
-// catch(err){
-//    setToastMsg('Invalid URL format. Please enter a valid link.');
-//   setShowToast(true);
-//   return;
-// }
+if (!longUrl || !urlPattern.test(longUrl.trim())) {
+  setToastMsg('Please enter a valid URL');
+  setShowToast(true);
+  return;
+}
+
 
 try{
   const response=await api.post('/url/shorten',{username:username,longUrl})
